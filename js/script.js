@@ -33,6 +33,28 @@ document.addEventListener('DOMContentLoaded', ()=> {
             this.classList.add('favorite');
         }
     }
+
+    // Films info
+
+    let filmsInfoButton = document.querySelectorAll('.films-button__info'),
+        filmsInfo = document.querySelectorAll('.films__info'),
+        filmsInfoClose = document.querySelectorAll('.info-close');
+
+
+    function CloseInfo() {
+        for(let element in filmsInfoClose) {
+            filmsInfoClose[element].addEventListener('click', ()=> {
+                filmsInfo[element].style.display = 'none';
+            });
+        }
+    } 
+
+    for(let element in filmsInfoButton) {
+        filmsInfoButton[element].onclick = function() {
+            filmsInfo[element].style.display = 'block';
+            CloseInfo();
+        }
+    }
     
 
 
